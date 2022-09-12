@@ -85,29 +85,4 @@ export function AddNewRow(key, INPUT_JSONs) {
   );
 }
 
-export function AddNewRoow(key) {
-  let row = [<td>1</td>];
 
-  let newRow = React.Children.toArray(
-    INPUT_JSON.map((control) => {
-      if (control.hasOwnProperty("cols")) {
-        let innerBody = [];
-        for (let c of control.cols) {
-          innerBody.push(addUI(c));
-        }
-        return (
-          <td>
-            <div className="PartNumber">{innerBody}</div>
-          </td>
-        );
-      }
-      return <td>{addUI(control)}</td>;
-    })
-  );
-  row = [...row, ...newRow];
-  return (
-    <>
-      <tr key={key}>{row}</tr>
-    </>
-  );
-}
