@@ -1,0 +1,15 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  .my-card{
+    height: 90vh;
+    width: 90vw;
+    /* background-color: rgb(233, 232, 232); */
+    padding: 1rem;
+    /* overflow-y: scroll; */
+  
+}
