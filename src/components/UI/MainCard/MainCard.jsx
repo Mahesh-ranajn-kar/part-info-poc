@@ -1,14 +1,12 @@
+import React from 'react';
+import './MainCard.css';
 
-import "./MainCard.css";
-
-export default function MainCard(props){
-    return (
-        <>
-            <div className="main">
-                <div className='my-card mt-5'>
-                    {props.children}
-                </div>
-            </div>
-        </>
-    );
+export default function MainCard(props) {
+  return (
+    <>
+      <div className="main">
+        <div className="my-card mt-5">{props.children}</div>
+      </div>
+    </>
+  );
 }
