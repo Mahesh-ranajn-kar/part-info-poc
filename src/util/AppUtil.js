@@ -52,7 +52,8 @@ function addUI(obj, key) {
   } else if (obj.displayType === DISPLAY_TYPE.TESTAREA) {
     return TestArea();
   } else if (obj.displayType === DISPLAY_TYPE.BUTTON) {
-    return Button(obj.isDisabled);
+    //return Button(obj.isDisabled, key);
+    return <Button isDisabled={obj.isDisabled} keyID={key} />;
   }
 }
 
@@ -60,7 +61,6 @@ export function AddNewRow(key, INPUT_JSONs) {
   let row = [<td>1</td>];
   row = [...row, ...INPUT_JSON]
   return (
-    <>
       <tr key={key}>
         {React.Children.toArray(
           row.map((control) => {
@@ -70,18 +70,17 @@ export function AddNewRow(key, INPUT_JSONs) {
                 <td>
                   <div className="PartNumber">
                     {
-                      control.cols.map((innerControl) =>addUI(innerControl))
+                      control.cols.map((innerControl) =>addUI(innerControl, key))
                     }
                   </div>
                 </td>
               );
             } else {
-              return <td>{addUI(control)}</td>;
+              return <td>{addUI(control, key)}</td>;
             }
           })
         )}
       </tr>
-    </>
   );
 }
 

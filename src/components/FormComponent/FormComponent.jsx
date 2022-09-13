@@ -6,6 +6,6 @@ export default function FormComponent() {
   const partInfoRow = useSelector(store => store.partInfoRow)
 
   return (
-    <>{React.Children.toArray(partInfoRow)}</>
+    <>{partInfoRow}</>
   )
 }

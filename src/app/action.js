@@ -6,3 +6,10 @@ export const addToRow = (oneRow)=>{
         payload: oneRow
     }
 }
+
+export const removeFromRow = (key)=>{
+    return {
+        type: "REMOVE_FROM_ROW",
+        payload: key
+    }
+}
